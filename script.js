@@ -12,7 +12,7 @@ let subtitles = [
 ];
 document.getElementById('buttonid').addEventListener('click', openDialog);
 
-subtitle.innerHTML = "";
+//subtitle.innerHTML = "";
 
 function openDialog() {
     document.getElementById('fileid').click();
