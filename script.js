@@ -1,9 +1,21 @@
 console.clear();
-
+let subtitle = document.querySelector('.subtitles');
+let subPos = 0;
+let subtitles = [
+    "Hi there, it’s nice to meet you!",
+    "I’m a sperm whale. Weird name, I know.",
+    "But listen human, I want to ask you a big favor.",
+    "My family is threatened to be extinct, and so, we need to raise awareness about our situation.",
+    "Estrella Damm wants to help out, they are substituting plastic rings for a biodegradable packaging.",
+    "I need your creative mind to design the visual art of the new packaging, using me as your inspiration. ",
+    "Read below to get started."
+];
 document.getElementById('buttonid').addEventListener('click', openDialog);
 
+subtitle.innerHTML = "";
+
 function openDialog() {
-  document.getElementById('fileid').click();
+    document.getElementById('fileid').click();
 }
 /* Start Here ---- This Part is for Ocean current */
 
@@ -100,7 +112,7 @@ let loop = () => {
 
         c.globalAlpha = a
         c.fillStyle = `hsl(${200 + wave * 20}deg, 100%, 50%)`
-            //c.fillStyle = "hsl(" + (j * 0.6 + color) + ", 100%, 50%)"
+        //c.fillStyle = "hsl(" + (j * 0.6 + color) + ", 100%, 50%)"
         c.fillRect(x - a * vertexSize / 2, y - a * vertexSize / 2, a * vertexSize, a * vertexSize)
         c.globalAlpha = 1
     })
@@ -176,12 +188,26 @@ window.addEventListener("click", onClick);
 function onClick() {
 
     if (!songPlaying) {
-        audioContext = new(window.AudioContext || window.webkitAudioContext)();
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
         analyser = audioContext.createAnalyser();
         distortion = audioContext.createWaveShaper();
         gainNode = audioContext.createGain();
+        source = audioContext.createBufferSource();
+        source.buffer = buffer;
+        analyser.fftSize = 256;
         loadSong("./whale.wav");
         songPlaying = true;
+        window.setInterval(() => {
+
+            if (subPos === subtitles.length) {
+
+                //subtitle.innerHTML = "";
+                source.stop();
+                return;
+            }
+            subtitle.innerHTML = subtitles[subPos++];
+
+        }, 3000)
     }
 
 }
@@ -191,11 +217,11 @@ function loadSong(url) {
     let request = new XMLHttpRequest();
     request.open("GET", url, true);
     request.responseType = "arraybuffer";
-    request.onload = function() {
-        audioContext.decodeAudioData(request.response, function(buffer) {
+    request.onload = function () {
+        audioContext.decodeAudioData(request.response, function (buffer) {
             audioBuffer = buffer;
             playAudio(buffer);
-        }, function(error) {
+        }, function (error) {
             console.error(error);
         });
     };
@@ -343,7 +369,7 @@ scene.add(directionalLight);
 const mtlLoader = new THREE.MTLLoader();
 mtlLoader.setPath('');
 var url = "./model/untitled-scene.mtl";
-mtlLoader.load(url, function(materials) {
+mtlLoader.load(url, function (materials) {
     materials.preload();
 
     const loader = new THREE.OBJLoader();
@@ -353,7 +379,7 @@ mtlLoader.load(url, function(materials) {
 
         "./model/untitled-scene.obj",
 
-        function(obj) {
+        function (obj) {
             obj.scale.set(0.06, 0.06, 0.06);
             obj.position.set(-6, 3.5, 5)
             obj.rotation.set(0, 0.6, 0.3)
@@ -368,11 +394,11 @@ mtlLoader.load(url, function(materials) {
             // TweenMax.from(obj.rotation, 2, { x: 0.1, repeat: -1, ease: Sine.easeOut });
         },
 
-        function(xhr) {
+        function (xhr) {
             console.log((xhr.loaded / xhr.total * 100) + '% loaded');
         },
 
-        function(err) {
+        function (err) {
             console.error('An error happened');
         }
     );

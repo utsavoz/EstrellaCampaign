@@ -20,7 +20,9 @@ canvas {
     height: 100%;
     cursor: pointer;
 }
-
+.canvas-container{
+    position: relative;
+}
 .canvas-container #ocean {
     position: relative;
     width: 100vw;
@@ -37,6 +39,15 @@ p {
     font-size: 20px;
     color: #000447;
     font-weight: 200;
+}
+.subtitles{
+    position: absolute;
+    bottom: 1vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: white;
+    width: 100vw;
+    text-align: center;
 }
 
 .strong {
