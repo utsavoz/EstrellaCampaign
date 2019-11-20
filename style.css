@@ -42,11 +42,12 @@ p {
 }
 .subtitles{
     position: absolute;
-    bottom: 1vh;
+    bottom: 2vh;
     left: 50%;
     transform: translate(-50%, 0);
     color: white;
     width: 100vw;
+    
     text-align: center;
 }
 
