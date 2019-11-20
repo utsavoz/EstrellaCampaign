@@ -42,7 +42,7 @@ p {
 }
 .subtitles{
     position: absolute;
-    bottom: 2.5vh;
+    bottom: 10vh;
     left: 50%;
     transform: translate(-50%, 0);
     color: white;

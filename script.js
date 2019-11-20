@@ -279,7 +279,7 @@ function Spline() {
         vertexColors: THREE.VertexColors
     });
     this.mesh = new THREE.Line(this.geometry, this.material);
-    this.mesh.position.y = -14;
+    this.mesh.position.y = -12;
     this.speed = 0.0000000000007;
     //this.speed = 6;
     scene.add(this.mesh);
