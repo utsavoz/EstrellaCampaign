@@ -243,10 +243,21 @@ a {
 }
 
 .button3 {
+    padding: 20px;
+    font-size: 0.83em;
+    font-weight: bold;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-left: 40px;
     width: 100px;
     background-color: #000447;
     color: white;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button-download {

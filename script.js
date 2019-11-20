@@ -1,6 +1,10 @@
 console.clear();
 
+document.getElementById('buttonid').addEventListener('click', openDialog);
 
+function openDialog() {
+  document.getElementById('fileid').click();
+}
 /* Start Here ---- This Part is for Ocean current */
 
 // Init Context
