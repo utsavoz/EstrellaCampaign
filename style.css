@@ -153,7 +153,7 @@ a {
     height: 300px;
     margin-right: 20px;
     margin-left: 20px;
-    background: url(./assets/can-icon.png);
+    background: url(./assets/Can_gif.gif);
     background-position: center;
     -webkit-background-size: contain;
     object-fit: contain;
@@ -167,7 +167,7 @@ a {
     height: 300px;
     margin-right: 20px;
     margin-left: 20px;
-    background: url(./assets/brush-icon.png);
+    background: url(./assets/brush_gif.gif);
     background-position: center;
     -webkit-background-size: contain;
     object-fit: contain;
@@ -181,7 +181,7 @@ a {
     height: 300px;
     margin-right: 20px;
     margin-left: 20px;
-    background: url(./assets/instagram-icon.png);
+    background: url(./assets/Instagram_gif.gif);
     background-position: center;
     -webkit-background-size: contain;
     object-fit: contain;
@@ -195,7 +195,7 @@ a {
     height: 300px;
     margin-right: 20px;
     margin-left: 20px;
-    background: url(./assets/cloud-icon.png);
+    background: url(./assets/Upload_gif.gif);
     background-position: center;
     -webkit-background-size: contain;
     object-fit: contain;
